@@ -1,0 +1,11 @@
+version: "2"
+
+services:
+  mosquitto:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: "minicursoiot.azurecr.io/mosquitto:latest"
+    container_name: "mosquitto"
+    ports:
+      - 1883:1883
