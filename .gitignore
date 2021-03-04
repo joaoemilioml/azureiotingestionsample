@@ -348,3 +348,10 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+/IoTIngestion/SimulateDevices/appsettings.json
+/docker/Mosquitto/plain_password.txt
+/IoTIngestion/DataSink/Properties/ServiceDependencies/iot-datasink - Web Deploy/profile.arm.json
+/IoTIngestion/IoTDeviceType1/Properties/ServiceDependencies/iot-device-type-1 - Web Deploy/profile.arm.json
+/IoTIngestion/IoTDeviceType2/Properties/ServiceDependencies/iot-device-type-2 - Web Deploy/profile.arm.json
+/IoTIngestion/MQTTTrigger/Properties/ServiceDependencies/iot-mqtt-func - Web Deploy
+/IoTIngestion/MQTTTrigger/Properties/serviceDependencies.iot-mqtt-func - Web Deploy.json
