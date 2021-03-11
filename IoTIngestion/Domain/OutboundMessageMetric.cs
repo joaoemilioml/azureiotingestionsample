@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -10,6 +11,8 @@ namespace Domain
     }
     public class OutboundMessageMetric
     {
+        [JsonIgnore]
+        public Guid Id => Guid.NewGuid();
         public string DeviceId { get; set; }
         public DateTime Timestamp { get; set; }
         public string MetricName { get; set; }

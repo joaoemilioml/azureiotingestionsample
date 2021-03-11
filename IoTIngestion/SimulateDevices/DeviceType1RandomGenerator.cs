@@ -3,13 +3,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 
 namespace SimulateDevices
 {
     public class DeviceType1RandomGenerator
     {
-        private readonly int numberOfMessages = 100;
-        private readonly int numberOfNodes = 10;
+        private readonly int numberOfMessages = 10;
+        private readonly int numberOfNodes = 2;
         
         public List<string> metrics = new List<string>
         {
@@ -27,12 +28,15 @@ namespace SimulateDevices
                     nodes.Add(new DeviceType1ChildDevice
                     {
                         DeviceId = $"DT1_Device{j}",
+                        Timestamp = DateTime.UtcNow,
                         Metrics = metrics.Select(x => new DeviceType1Metric
                         {
                             Name = x,
                             Value = (decimal)new Random().NextDouble() * 100
                         }).ToList()
                     });
+
+                    Thread.Sleep(1000);
 
                 }
 

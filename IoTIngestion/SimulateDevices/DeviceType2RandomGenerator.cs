@@ -3,12 +3,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 
 namespace SimulateDevices
 {
     public class DeviceType2RandomGenerator
     {
-        private readonly int numberOfMessages = 100;
+        private readonly int numberOfMessages = 20;
         public List<string> metrics = new List<string>
         {
             "Temperature", "Umidity", "Pressure", "Flow"
@@ -20,10 +21,12 @@ namespace SimulateDevices
             {
                 messages.Add(new DeviceType2InboundMessage
                 {
-                    DeviceId = $"DT2_Device{i}",
+                    DeviceId = $"DT2_Device",
                     Timestamp = DateTime.UtcNow,
                     Data = metrics.ToDictionary(x => x, x => (decimal) new Random().NextDouble()*100)
                 });
+
+                Thread.Sleep(1000);
 
             }
 
